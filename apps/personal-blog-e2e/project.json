@@ -1,0 +1,33 @@
+{
+  "name": "personal-blog-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/personal-blog-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/personal-blog-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "personal-blog:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "personal-blog:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "personal-blog:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/personal-blog-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["personal-blog"]
+}

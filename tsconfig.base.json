@@ -14,7 +14,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-monorepo/button": ["libs/button/src/index.ts"],
+      "@nx-monorepo/card": ["libs/card/src/index.ts"],
+      "@nx-monorepo/cart": ["libs/cart/src/index.ts"],
+      "@nx-monorepo/layout": ["libs/layout/src/index.ts"],
+      "@nx-monorepo/login": ["libs/login/src/index.ts"],
+      "@nx-monorepo/orders": ["libs/orders/src/index.ts"],
+      "@nx-monorepo/products": ["libs/products/src/index.ts"],
+      "@nx-monorepo/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "@nx-monorepo/table": ["libs/table/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
